@@ -2,36 +2,33 @@ name: Update Language Stats
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Runs daily
+    - cron: '0 0 * * *'  # Daily
   workflow_dispatch:
 
 jobs:
   update-stats:
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Checkout the repository
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
           persist-credentials: false
 
-      # Step 2: Generate language stats
       - name: Generate stats
-        uses: anuraghazra/github-readme-stats@v5.0.0  # Use explicit version
+        uses: anuraghazra/github-readme-stats@v5.1.0  
         with:
           github_token: ${{ secrets.GH_TOKEN }}
           private: true
           exclude_repo: traitgen-shop
           languages_url: generated_stats/langs.svg
 
-      # Step 3: Create directory (if missing)
       - name: Create directory
         run: mkdir -p generated_stats
 
-      # Step 4: Commit changes
       - name: Commit files
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git add generated_stats/langs.svg
-          git commit -m "
+          git commit -m "Update language stats"
+          git push
