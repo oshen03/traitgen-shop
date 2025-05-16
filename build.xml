@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="traitgen-shop" default="default" basedir=".">
+    <description>Builds, tests, and runs the project traitgen-shop.</description>
+    <import file="nbproject/build-impl.xml"/>
+
+    <!-- Override the macrodef for javac -->
+    <target name="-override-macrodef-javac">
+        <macrodef name="javac">
+            <attribute name="destdir"/>
+            <attribute name="sourcepath"/>
+            <attribute name="classpath"/>
+            <attribute name="bootclasspath"/>
+            <attribute name="encoding"/>
+            <attribute name="excludes"/>
+            <attribute name="includes"/>
+            <attribute name="debug"/>
+            <attribute name="deprecation"/>
+            <attribute name="source"/>
+            <attribute name="target"/>
+            <attribute name="release"/>
+
+            <sequential>
+                <javac destdir="@{destdir}"
+                       sourcepath="@{sourcepath}"
+                       classpath="@{classpath}"
+                       bootclasspath="@{bootclasspath}"
+                       encoding="@{encoding}"
+                       excludes="@{excludes}"
+                       includes="@{includes}"
+                       debug="@{debug}"
+                       deprecation="@{deprecation}"
+                       release="8">
+                </javac>
+            </sequential>
+        </macrodef>
+    </target>
+
+    <!-- Call the custom macrodef in initialization -->
+    <target name="-pre-init">
+        <antcall target="-override-macrodef-javac"/>
+    </target>
+</project>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #969696;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="clarityEmployeeSolid0">
+    <ellipse class="cls-1" cx="11.11" cy="7.17" rx="3.82" ry="3.98"/>
+    <path class="cls-1" d="M13.56,18.43h4.13v.86h-4.13v-.86Z"/>
+    <path class="cls-1" d="M10.01,19.66v1.85c0,.34.26.62.59.62h10.04c.33,0,.59-.28.59-.62v-6.16c0-.34-.26-.62-.59-.62h-4.13v-.91c0-.34-.26-.62-.59-.62s-.59.28-.59.62v.91h-1.18v-2.21c-1-.17-2.02-.26-3.04-.26-2.24,0-4.46.49-6.5,1.47-.68.34-1.12,1.06-1.11,1.85v4.07h6.51ZM20.05,20.89h-8.86v-4.93h4.13v.26c0,.34.26.62.59.62s.59-.28.59-.62v-.26h3.54v4.93Z"/>
+  </g>
+</svg>

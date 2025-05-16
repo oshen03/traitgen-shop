@@ -1,0 +1,678 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
+package traitgen.application.form.pasan.gui;
+
+
+//import com.formdev.flatlaf.intellijthemes.FlatLightFlatIJTheme;
+//import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialLighterIJTheme;
+//import com.myapp.themes.MyCustomLaf;
+import java.sql.ResultSet;
+import java.util.Vector;
+import java.util.regex.Pattern;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.MySQL;
+import raven.toast.Notifications;
+
+/**
+ *
+ * @author Pasan
+ */
+public class companyRegistration extends javax.swing.JFrame {
+
+    public void loadCities() {
+        try {
+            ResultSet rs = MySQL.executeSearch("SELECT * FROM `city`");
+
+            Vector v = new Vector();
+            v.add("Select City");
+
+            while (rs.next()) {
+                v.add(rs.getString("name"));
+            }
+
+            DefaultComboBoxModel dcm = new DefaultComboBoxModel(v);
+            jComboBox5.setModel(dcm);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void loadSuppliers2() {
+        try {
+            ResultSet rs = MySQL.executeSearch("SELECT * FROM `supplier` INNER JOIN `company_branch` ON `supplier`.`company_branch_id`=`company_branch`.`id` INNER JOIN `company_branch_address` ON `company_branch_address`.`id`=`company_branch`.`company_branch_address_id` INNER JOIN `company` ON `company`.`id` = `company_branch`.`company_id` INNER JOIN `city` ON `city`.`id`= `company_branch_address`.`city_id` ORDER BY `supplier`.`mobile` ASC");
+            DefaultTableModel dtm = (DefaultTableModel) jTable5.getModel();
+            dtm.setRowCount(0);
+
+            while (rs.next()) {
+                Vector v = new Vector();
+                v.add(rs.getString("supplier.mobile"));
+                v.add(rs.getString("supplier.fname"));
+                //v.add(rs.getString("supplier.contact_number"));
+                v.add(rs.getString("supplier.email"));
+                v.add(rs.getString("company.name"));
+                v.add(rs.getString("company_branch.name"));
+                v.add(rs.getString("company_branch.branch_contact_number"));
+                String address = rs.getString("company_branch_address.line1") + "," + rs.getString("company_branch_address.line2") + "," + rs.getString("city.name");
+                v.add(address);
+                dtm.addRow(v);
+            }
+
+            jTable5.setModel(dtm);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void loadCompanies() {
+        try {
+            ResultSet rs = MySQL.executeSearch("SELECT * FROM `company` ORDER BY `id` ASC");
+            DefaultTableModel dtm = (DefaultTableModel) jCtable.getModel();
+            dtm.setRowCount(0);
+            while (rs.next()) {
+                Vector v = new Vector();
+                v.add(rs.getString("id"));
+                v.add(rs.getString("name"));
+                v.add(rs.getString("contact_number"));
+                dtm.addRow(v);
+            }
+            jCtable.setModel(dtm);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void loadCompSuppliers() {
+        try {
+            ResultSet rs = MySQL.executeSearch("SELECT * FROM `company_branch`  INNER JOIN `company_branch_address` ON `company_branch_address`.`id`=`company_branch`.`company_branch_address_id` INNER JOIN `company` ON `company`.`id` = `company_branch`.`company_id` INNER JOIN `city` ON `city`.`id`= `company_branch_address`.`city_id` ORDER BY `company_branch`.`id` ASC");
+            DefaultTableModel dtm = (DefaultTableModel) jTable5.getModel();
+            dtm.setRowCount(0);
+
+            while (rs.next()) {
+                Vector v = new Vector();
+
+                v.add(rs.getString("company.name"));
+                v.add(rs.getString("company_branch.name"));
+                v.add(rs.getString("company_branch.branch_contact_number"));
+                String address = rs.getString("company_branch_address.line1") + "," + rs.getString("company_branch_address.line2") + "," + rs.getString("city.name");
+                v.add(address);
+                dtm.addRow(v);
+            }
+
+            jTable5.setModel(dtm);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public companyRegistration() {
+        initComponents();
+        //loadSuppliers();
+        //regcomp();
+        loadCompanies();
+        loadCompSuppliers();
+        loadCities();
+    }
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel6 = new javax.swing.JPanel();
+        pnlCard7 = new javax.swing.JPanel();
+        jPanel26 = new javax.swing.JPanel();
+        jPanel31 = new javax.swing.JPanel();
+        jTextField9 = new javax.swing.JTextField();
+        jButton6 = new javax.swing.JButton();
+        jLabel92 = new javax.swing.JLabel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jCtable = new javax.swing.JTable();
+        jcompany = new javax.swing.JTextField();
+        jPanel33 = new javax.swing.JPanel();
+        jTextField17 = new javax.swing.JTextField();
+        jTextField18 = new javax.swing.JTextField();
+        jTextField19 = new javax.swing.JTextField();
+        jTextField20 = new javax.swing.JTextField();
+        jComboBox5 = new javax.swing.JComboBox<>();
+        jButton13 = new javax.swing.JButton();
+        jLabel98 = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator7 = new javax.swing.JSeparator();
+        jCid = new javax.swing.JLabel();
+        jCname = new javax.swing.JLabel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        pnlCard7.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel26.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jTextField9.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        jTextField9.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Company Name", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+
+        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton6.setText("Add Company");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jLabel92.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel92.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel92.setText("Company Registration");
+
+        jCtable.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jCtable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Company ID", "Name", "Contact Number"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jCtable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jCtableMouseClicked(evt);
+            }
+        });
+        jScrollPane8.setViewportView(jCtable);
+
+        jcompany.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        jcompany.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Company Contact Number", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        jcompany.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcompanyActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
+        jPanel31.setLayout(jPanel31Layout);
+        jPanel31Layout.setHorizontalGroup(
+            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel92, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
+            .addComponent(jTextField9)
+            .addComponent(jcompany, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+        jPanel31Layout.setVerticalGroup(
+            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel31Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel92, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jcompany, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
+        jPanel26.setLayout(jPanel26Layout);
+        jPanel26Layout.setHorizontalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel26Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel26Layout.setVerticalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        jTextField17.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Branch Name", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+
+        jTextField18.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Branch Contact Number", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        jTextField18.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField18KeyTyped(evt);
+            }
+        });
+
+        jTextField19.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Address Line 01", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+
+        jTextField20.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Address Line 02", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+
+        jComboBox5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "City", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        jComboBox5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox5ActionPerformed(evt);
+            }
+        });
+
+        jButton13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton13.setText("Create New Branch");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+
+        jLabel98.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel98.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel98.setText("Branch Registration");
+
+        jCid.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jCid.setText("None");
+        jCid.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Company ID :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+
+        jCname.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jCname.setText("None");
+        jCname.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Company Name :", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+
+        javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
+        jPanel33.setLayout(jPanel33Layout);
+        jPanel33Layout.setHorizontalGroup(
+            jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel33Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jComboBox5, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel98, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel33Layout.createSequentialGroup()
+                        .addComponent(jCid, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jCname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jTextField17)
+                    .addComponent(jTextField18)
+                    .addComponent(jTextField19)
+                    .addComponent(jTextField20))
+                .addContainerGap())
+        );
+        jPanel33Layout.setVerticalGroup(
+            jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel33Layout.createSequentialGroup()
+                .addGap(7, 7, 7)
+                .addComponent(jLabel98, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCid, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField19)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox5)
+                .addGap(18, 18, 18)
+                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
+        );
+
+        jTable5.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null}
+            },
+            new String [] {
+                "Company Name", "Branch Name", "Branch Contact Number", "Branch Address"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jTable5MouseEntered(evt);
+            }
+        });
+        jScrollPane9.setViewportView(jTable5);
+
+        javax.swing.GroupLayout pnlCard7Layout = new javax.swing.GroupLayout(pnlCard7);
+        pnlCard7.setLayout(pnlCard7Layout);
+        pnlCard7Layout.setHorizontalGroup(
+            pnlCard7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCard7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlCard7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlCard7Layout.createSequentialGroup()
+                        .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addComponent(jScrollPane9)))
+        );
+        pnlCard7Layout.setVerticalGroup(
+            pnlCard7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCard7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlCard7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pnlCard7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pnlCard7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 866, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, 0)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(0, 0, 0)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 660, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, 0)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(0, 0, 0)))
+        );
+
+        pack();
+        setLocationRelativeTo(null);
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+
+        String name = jTextField9.getText();
+        String contact_number = jcompany.getText();
+
+        if (name.isEmpty()) {
+            Notifications.getInstance().show(Notifications.Type.WARNING, Notifications.Location.TOP_RIGHT, "Please select company name");
+        } else if (contact_number.isEmpty()) {
+            Notifications.getInstance().show(Notifications.Type.WARNING, Notifications.Location.TOP_RIGHT, "Invalid contact number");
+        } else {
+
+            try {
+
+                ResultSet rs = MySQL.executeSearch("SELECT * FROM `company` WHERE `name`='" + name + "' AND `contact_number`='" + contact_number + "'");
+
+                if (rs.next()) {
+                    Notifications.getInstance().show(Notifications.Type.WARNING, Notifications.Location.TOP_RIGHT, "Company already exists");
+                } else {
+                    MySQL.executeIUD("INSERT INTO `company` (`name`,`contact_number`) VALUES ('" + name + "','" + contact_number + "')");
+                    jTextField9.setText("");
+                    jcompany.setText("");
+                    jTextField9.grabFocus();
+                    loadCompanies();
+                    Notifications.getInstance().show(Notifications.Type.SUCCESS, Notifications.Location.TOP_RIGHT, "New company added");
+
+                    jTextField9.setText("");
+                    jcompany.setText("");
+                }
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jCtableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCtableMouseClicked
+        if (evt.getClickCount() == 2) {
+            int r = jCtable.getSelectedRow();
+
+            if (r == -1) {
+                JOptionPane.showMessageDialog(this, "Please select a company", "Warning", JOptionPane.WARNING_MESSAGE);
+            } else {
+
+                String id = jCtable.getValueAt(r, 0).toString();
+                String name = jCtable.getValueAt(r, 1).toString();
+
+                jCid.setText(id);
+                jCname.setText(name);
+
+            }
+        }
+    }//GEN-LAST:event_jCtableMouseClicked
+
+    private void jTable5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable5MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTable5MouseEntered
+
+    private void jcompanyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcompanyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcompanyActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+
+        String name = jTextField17.getText();
+        String contact_number = jTextField18.getText();
+        String company = jCname.getText();  // Assuming this is the company name
+        String address_line_01 = jTextField19.getText();
+        String address_line_02 = jTextField20.getText();
+        String city = jComboBox5.getSelectedItem().toString();
+
+        if (name.isEmpty()) {
+            Notifications.getInstance().show(Notifications.Type.WARNING, Notifications.Location.TOP_RIGHT, "Please enter branch name");
+            return;
+        }
+
+// Validate contact number format
+        if (!Pattern.compile("^0[0-9]{9}$").matcher(contact_number).matches()) {
+            Notifications.getInstance().show(Notifications.Type.WARNING, Notifications.Location.TOP_RIGHT, "Invalid contact number format. Please use 10 digits starting with 0.");
+            return;
+        }
+
+// Validate company selection
+        if (company.isEmpty() || "None".equalsIgnoreCase(company)) {
+            Notifications.getInstance().show(Notifications.Type.WARNING, Notifications.Location.TOP_RIGHT, "Please select a company.");
+            return;
+        }
+
+// Validate address line 1
+        if (address_line_01.isEmpty()) {
+            Notifications.getInstance().show(Notifications.Type.WARNING, Notifications.Location.TOP_RIGHT, "Please enter address line 01.");
+            return;
+        }
+
+// Validate address line 2
+        if (address_line_02.isEmpty()) {
+            Notifications.getInstance().show(Notifications.Type.WARNING, Notifications.Location.TOP_RIGHT, "Please enter address line 02.");
+            return;
+        }
+
+// Validate city selection
+        if ("Select City".equalsIgnoreCase(city)) {
+            Notifications.getInstance().show(Notifications.Type.WARNING, Notifications.Location.TOP_RIGHT, "Please select a city.");
+            return;
+        }
+
+// Additional Validations
+        if (name.length() > 50) {
+            Notifications.getInstance().show(Notifications.Type.WARNING, Notifications.Location.TOP_RIGHT, "Branch name is too long. Max 50 characters allowed.");
+            return;
+        }
+
+        if (!Pattern.compile("^[a-zA-Z0-9 ,.-]+$").matcher(address_line_01).matches()) {
+            Notifications.getInstance().show(Notifications.Type.WARNING, Notifications.Location.TOP_RIGHT, "Address Line 01 contains invalid characters.");
+            return;
+        }
+
+        if (!Pattern.compile("^[a-zA-Z0-9 ,.-]+$").matcher(address_line_02).matches()) {
+            Notifications.getInstance().show(Notifications.Type.WARNING, Notifications.Location.TOP_RIGHT, "Address Line 02 contains invalid characters.");
+            return;
+        } else {
+
+            try {
+                // Fetch city_id from the city table
+                ResultSet rs1 = MySQL.executeSearch("SELECT id FROM `city` WHERE `name`='" + city + "'");
+                if (rs1.next()) {
+                    String city_id = rs1.getString("id");
+
+                    // Fetch company_id based on company name
+                    ResultSet rsCompany = MySQL.executeSearch("SELECT id FROM `company` WHERE `name`='" + company + "'");
+                    if (rsCompany.next()) {
+                        String company_id = rsCompany.getString("id");
+
+                        // Check if address is already used
+                        ResultSet rsx = MySQL.executeSearch("SELECT * FROM `company_branch_address` WHERE `line1`='" + address_line_01 + "' AND `line2`='" + address_line_02 + "' AND `city_id`= '" + city_id + "' ;");
+
+                        if (rsx.next()) {
+                             Notifications.getInstance().show(Notifications.Type.WARNING, Notifications.Location.TOP_RIGHT, "Address already used.");
+                           
+                        } else {
+                            // Insert the new branch address
+                            MySQL.executeIUD("INSERT INTO `company_branch_address` (`line1`,`line2`,`city_id`) VALUES ('" + address_line_01 + "','" + address_line_02 + "','" + city_id + "')");
+
+                            // Get the newly inserted address ID
+                            ResultSet rs = MySQL.executeSearch("SELECT LAST_INSERT_ID()");
+                            if (rs.next()) {
+                                String address_id = rs.getString(1);
+
+                                // Insert the new company branch
+                                MySQL.executeIUD("INSERT INTO `company_branch` (`company_id`,`branch_contact_number`,`name`,`company_branch_address_id`) VALUES ('" + company_id + "','" + contact_number + "','" + name + "','" + address_id + "')");
+
+                                // Reset fields after successful insertion
+                                jTextField17.setText("");
+                                jTextField18.setText("");
+                                jCname.setText("None");
+                                jCid.setText("None");
+                                jTextField19.setText("");
+                                jTextField20.setText("");
+                                jComboBox5.setSelectedIndex(0);
+
+                                jTextField17.grabFocus();
+
+                                
+                                Notifications.getInstance().show(Notifications.Type.SUCCESS, Notifications.Location.TOP_RIGHT, "New Branch Created.");
+                                loadCompSuppliers();
+                            }
+                        }
+                    } else {
+                        
+                        Notifications.getInstance().show(Notifications.Type.WARNING, Notifications.Location.TOP_RIGHT, "Selected company does not exist in the database");
+                    }
+                } else {
+                    Notifications.getInstance().show(Notifications.Type.WARNING, Notifications.Location.TOP_RIGHT, "City not found");
+                    
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jTextField18KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField18KeyTyped
+
+        String mobile = jTextField18.getText();
+        String text = mobile + evt.getKeyChar();
+
+        if (mobile.length() == 10) {
+            evt.consume();
+        } else {
+            if (!Pattern.compile("[0-9]+").matcher(text).matches()) {
+                evt.consume();
+            }
+        }
+    }//GEN-LAST:event_jTextField18KeyTyped
+
+    private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox5ActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+//        MyCustomLaf.setup();
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new companyRegistration().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton6;
+    public javax.swing.JLabel jCid;
+    public javax.swing.JLabel jCname;
+    private javax.swing.JComboBox<String> jComboBox5;
+    private javax.swing.JTable jCtable;
+    private javax.swing.JLabel jLabel92;
+    private javax.swing.JLabel jLabel98;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel31;
+    private javax.swing.JPanel jPanel33;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JTable jTable5;
+    private javax.swing.JTextField jTextField17;
+    private javax.swing.JTextField jTextField18;
+    private javax.swing.JTextField jTextField19;
+    private javax.swing.JTextField jTextField20;
+    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField jcompany;
+    private javax.swing.JPanel pnlCard7;
+    // End of variables declaration//GEN-END:variables
+
+}

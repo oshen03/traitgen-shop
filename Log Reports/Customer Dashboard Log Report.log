@@ -1,0 +1,192 @@
+Jan 15, 2025 7:49:38 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 15, 2025 7:49:38 PM traitgen.application.form.other.Customer loadTable
+SEVERE: Error loading customer data: com.mysql.cj.jdbc.Driver
+Jan 15, 2025 7:53:51 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 15, 2025 7:56:54 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 15, 2025 8:01:53 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 15, 2025 10:26:55 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 15, 2025 10:28:01 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 15, 2025 10:51:39 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 16, 2025 12:26:48 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 16, 2025 12:29:50 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 16, 2025 12:37:06 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 16, 2025 12:38:03 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 16, 2025 12:58:11 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 16, 2025 12:58:38 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 16, 2025 12:59:18 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 16, 2025 1:00:01 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 16, 2025 2:23:54 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 16, 2025 2:41:40 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 16, 2025 2:44:45 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 16, 2025 2:45:40 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 16, 2025 2:46:26 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 16, 2025 2:51:45 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 16, 2025 2:52:44 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 16, 2025 11:15:49 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 16, 2025 11:58:00 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 17, 2025 12:02:22 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 17, 2025 12:05:49 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 17, 2025 12:07:44 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 17, 2025 12:30:22 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 17, 2025 12:47:07 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 17, 2025 3:44:17 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 17, 2025 3:47:42 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 22, 2025 2:00:47 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 22, 2025 3:33:57 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 22, 2025 3:34:28 PM traitgen.application.form.other.Customer loadTable
+SEVERE: Error loading customer data: Access denied for user 'root'@'localhost' (using password: YES)
+Jan 26, 2025 9:21:45 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 26, 2025 9:23:12 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 26, 2025 9:42:35 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 26, 2025 9:50:09 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 26, 2025 10:02:23 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 26, 2025 12:27:31 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 26, 2025 12:30:07 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 26, 2025 1:02:37 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 26, 2025 1:03:54 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 26, 2025 1:07:01 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 26, 2025 1:19:35 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 26, 2025 1:23:32 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 26, 2025 1:25:04 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 26, 2025 1:36:47 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 26, 2025 1:42:37 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 26, 2025 1:43:39 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 26, 2025 1:52:06 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 26, 2025 2:15:28 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 26, 2025 2:20:17 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 26, 2025 2:36:44 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 26, 2025 2:43:01 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 26, 2025 2:50:19 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 26, 2025 4:58:17 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 26, 2025 5:23:09 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 26, 2025 6:02:24 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 28, 2025 6:08:32 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 28, 2025 6:11:26 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 28, 2025 6:12:58 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 28, 2025 7:22:53 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 28, 2025 7:51:19 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 28, 2025 7:53:38 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 28, 2025 7:58:21 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 28, 2025 8:03:44 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 28, 2025 8:55:59 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 28, 2025 9:17:34 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 28, 2025 9:21:55 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 28, 2025 10:30:08 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 28, 2025 10:37:34 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 29, 2025 5:23:37 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 29, 2025 7:57:32 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 29, 2025 9:00:08 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 30, 2025 12:02:22 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 30, 2025 5:44:31 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 30, 2025 7:37:43 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 31, 2025 6:49:40 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 31, 2025 7:33:32 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Jan 31, 2025 10:17:19 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Feb 01, 2025 8:07:38 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Feb 02, 2025 9:51:33 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Feb 02, 2025 10:10:01 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Feb 03, 2025 10:15:56 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Feb 03, 2025 10:19:31 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Feb 03, 2025 6:55:34 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Feb 05, 2025 7:02:00 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Feb 05, 2025 7:08:42 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Mar 01, 2025 7:26:10 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Mar 04, 2025 1:14:02 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+Mar 08, 2025 12:14:09 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+May 16, 2025 10:42:24 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+May 16, 2025 10:42:51 PM traitgen.application.form.other.Customer loadTable
+SEVERE: Error loading customer data: Access denied for user 'root'@'localhost' (using password: YES)
+May 16, 2025 10:42:56 PM traitgen.application.form.other.Customer loadTable
+SEVERE: Error loading customer data: Access denied for user 'root'@'localhost' (using password: YES)
