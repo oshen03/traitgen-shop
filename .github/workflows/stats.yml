@@ -12,18 +12,19 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          persist-credentials: false
+          persist-credentials: true  # Required for git push
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
 
       - name: Generate stats
-        uses: anuraghazra/github-readme-stats@v5.1.0  
-        with:
-          github_token: ${{ secrets.GH_TOKEN }}
-          private: true
-          exclude_repo: traitgen-shop
-          languages_url: generated_stats/langs.svg
-
-      - name: Create directory
-        run: mkdir -p generated_stats
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          pip install requests
+          python scripts/generate_language_stats.py
 
       - name: Commit files
         run: |
