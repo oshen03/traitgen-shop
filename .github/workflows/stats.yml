@@ -9,11 +9,11 @@ jobs:
   update-stats:
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Checkout repo (master branch)
+      # Step 1: Checkout repo (with auth)
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          ref: master  
+          ref: master
           persist-credentials: true
           fetch-depth: 0
 
@@ -29,16 +29,28 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           pip install requests
-          mkdir -p generated_stats  # Create directory
+          mkdir -p generated_stats
           python scripts/generate_language_stats.py
 
-      # Step 4: Commit files
+      # Step 4: Commit and push (critical fixes)
       - name: Commit files
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
+          # Configure Git
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git config --global pull.rebase true
-          git pull origin master  # Sync with remote
+
+          # Reset to avoid conflicts
+          git reset --hard origin/master
+
+          # Pull latest changes
+          git pull origin master
+
+          # Add and commit
           git add generated_stats/langs.svg
           git commit -m "Update language stats"
-          git push origin master  # Push to master
+
+          # Push using token-based auth
+          git push "https://x-access-token:$GH_TOKEN@github.com/$GITHUB_REPOSITORY.git" master
