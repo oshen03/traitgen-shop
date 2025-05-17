@@ -190,3 +190,39 @@ May 16, 2025 10:42:51 PM traitgen.application.form.other.Customer loadTable
 SEVERE: Error loading customer data: Access denied for user 'root'@'localhost' (using password: YES)
 May 16, 2025 10:42:56 PM traitgen.application.form.other.Customer loadTable
 SEVERE: Error loading customer data: Access denied for user 'root'@'localhost' (using password: YES)
+May 17, 2025 3:40:07 AM traitgen.application.form.oshen.CustomerDashboard setLogger
+INFO: Customer Dashboard Logger initialized
+May 17, 2025 3:41:02 AM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+May 17, 2025 3:41:09 AM traitgen.application.form.other.Customer loadTable
+SEVERE: Error loading customer data: Access denied for user 'root'@'localhost' (using password: YES)
+May 17, 2025 3:42:31 AM traitgen.application.form.oshen.CustomerDashboard setLogger
+INFO: Customer Dashboard Logger initialized
+May 17, 2025 8:11:47 PM traitgen.application.form.oshen.CustomerDashboard setLogger
+INFO: Customer Dashboard Logger initialized
+May 17, 2025 8:19:16 PM traitgen.application.form.oshen.CustomerDashboard setLogger
+INFO: Customer Dashboard Logger initialized
+May 17, 2025 8:20:49 PM traitgen.application.form.oshen.CustomerDashboard setLogger
+INFO: Customer Dashboard Logger initialized
+May 17, 2025 8:22:29 PM traitgen.application.form.oshen.CustomerDashboard setLogger
+INFO: Customer Dashboard Logger initialized
+May 17, 2025 8:23:37 PM traitgen.application.form.oshen.CustomerDashboard setLogger
+INFO: Customer Dashboard Logger initialized
+May 17, 2025 8:26:17 PM traitgen.application.form.oshen.CustomerDashboard setLogger
+INFO: Customer Dashboard Logger initialized
+May 17, 2025 8:26:47 PM traitgen.application.form.oshen.CustomerDashboard setLogger
+INFO: Customer Dashboard Logger initialized
+May 17, 2025 8:28:50 PM traitgen.application.form.oshen.CustomerDashboard setLogger
+INFO: Customer Dashboard Logger initialized
+May 17, 2025 8:30:09 PM traitgen.application.form.oshen.CustomerDashboard setLogger
+INFO: Customer Dashboard Logger initialized
+May 17, 2025 9:51:39 PM traitgen.application.form.oshen.CustomerDashboard setLogger
+INFO: Customer Dashboard Logger initialized
+May 17, 2025 9:52:44 PM traitgen.application.form.oshen.CustomerDashboard setLogger
+INFO: Customer Dashboard Logger initialized
+May 17, 2025 10:36:28 PM traitgen.application.form.other.Customer setLogger
+INFO: Customer Dashboard Logger initialized
+May 17, 2025 10:36:28 PM traitgen.application.form.other.Customer loadTable
+SEVERE: Error loading customer data: Access denied for user 'root'@'localhost' (using password: YES)
+May 17, 2025 10:36:29 PM traitgen.application.form.other.Customer loadTable
+SEVERE: Error loading customer data: Access denied for user 'root'@'localhost' (using password: YES)
